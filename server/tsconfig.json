@@ -1,0 +1,38 @@
+{
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "allowJs": true, // Allow JavaScript files to be imported inside your project, instead of just .ts and .tsx files
+    "declaration": false, // Generate .d.ts files for every TypeScript or JavaScript file inside your project
+    "lib": ["es2019", "es2020", "es2021", "esnext"], // Specifies which default set of type definitions to use ("DOM", "ES6", etc)
+    "target": "es2019",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "rootDirs": ["."],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "baseUrl": "./",
+    "moduleResolution": "node", // Pretty much always node for modern JS. Other option is "classic"
+    "types": ["reflect-metadata"],
+    "paths": {
+      "@application/*": ["src/application/*"],
+      "@domain/*": ["src/domain/*"],
+      "@contracts/*": ["src/contracts/*"],
+      "@dtos/*": ["src/contracts/dtos/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@web/*": ["src/web/*"],
+      "@test/*": ["test/*"],
+      "@log": ["log/"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": ["node_modules", "src/datasource/repositories/knex/user.repo.knex.ts.off"]
+}
