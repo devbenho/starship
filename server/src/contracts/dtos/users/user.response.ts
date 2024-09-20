@@ -19,4 +19,14 @@ export class UserResponseDto {
         entity.scope?.name as ScopeNames,
     );
   }
+
+  public static Create(
+    id: string,
+    name: string,
+    email: string,
+    scopeId: string,
+    scope: ScopeNames,
+  ): UserResponseDto {
+    return new UserResponseDto(id, name, email, scopeId, scope);
+  }
 }
